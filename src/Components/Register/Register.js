@@ -1,11 +1,14 @@
 import { Button, Card, Checkbox, Label, TextInput } from "flowbite-react";
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthProvider } from "../../Context/AuthContext";
 
 const Register = () => {
   const { createUser ,updateUserProfile} = useContext(AuthProvider);
   const navigate = useNavigate();
+
+   const location = useLocation();
+  const from = location?.state?.from.pathname || '/';
 
   //register with email and password
   const handleSubmit = (event) => {
@@ -21,8 +24,8 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        navigate(from,{replace:true});
         handleUpdateUserProfile(name,photoURL);
-        navigate('/home')
     })
     .catch(e =>console.error(e))
   };
@@ -33,7 +36,7 @@ const Register = () => {
         photoURL:photoURL
     }
     updateUserProfile(profile)
-    .then(()=>{})
+    .then(()=>{console.log('profile updated');})
     .catch(e =>console.error(e))
 
   }
@@ -57,7 +60,7 @@ const Register = () => {
             <div className="mb-2 block">
               <Label htmlFor="photoURL" value="Your photo URL" />
             </div>
-            <TextInput id="photo" name="photo"type="text" placeholder="Your Photo URL" />
+            <TextInput id="photo" name="photo"type="text" placeholder="Your Photo URL" required/>
           </div>
           <div>
             <div className="mb-2 block">

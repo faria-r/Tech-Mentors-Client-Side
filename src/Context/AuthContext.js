@@ -20,7 +20,7 @@ const AuthContext = ({ children }) => {
   //setting obsever
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
-      if (currentUser === null || currentUser) {
+      if (currentUser === null || currentUser.email) {
         setUser(currentUser);
       }
       setLoading(false)
@@ -70,7 +70,8 @@ return signInWithEmailAndPassword(auth,email,password);
       updateUserProfile,
       loading,
       setLoading,
-      logOut
+      logOut,
+      setUser
     
     };
   return (

@@ -22,6 +22,7 @@ const handlelogInWithGoogle = () =>{
     .then(result => {
         const user = result.user;
         console.log(user);
+        navigate(from,{replace:true});
     })
     .catch(e =>{
         console.error(e)
@@ -34,6 +35,7 @@ const handleLogInWithGithub = (provider) =>{
     .then(result =>{
         const user = result.user;
         console.log(user);
+        navigate(from,{replace:true});
     })
     .catch(e => console.error(e))
 

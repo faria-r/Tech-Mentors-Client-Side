@@ -12,7 +12,7 @@ const Course = ({course}) => {
             {Course_title}
           </h5>
           <p className="font-normal text-gray-700 dark:text-gray-400">
-            {details.slice(0,100)}
+            {details.slice(0,100)+'...'}
           </p>
         </Card>
       </div>

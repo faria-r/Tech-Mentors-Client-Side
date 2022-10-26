@@ -61,7 +61,7 @@ const logInWithEmail = (event) =>{
 }
 
     return (
-        <div className="mt-16 w-96 mx-auto">
+        <div className="mt-16 w-96 mx-auto pb-16">
   <Card >
     <form onSubmit={logInWithEmail} className="flex flex-col gap-4">
       <div>

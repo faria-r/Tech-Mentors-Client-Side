@@ -2,8 +2,8 @@ import React from 'react';
 
 const ErrorPage = () => {
     return (
-        <div>
-            Error!404!
+        <div className='bg-slate-500 '>
+           <img  className='container mx-auto' src="https://i.ibb.co/g996LPM/R-1.jpg" alt="" />
         </div>
     );
 };

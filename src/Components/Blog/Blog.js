@@ -3,7 +3,7 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="container w-3/4 mx-auto mt-16 rounded drop-shadow-xl">
+    <div className="container w-3/4 mx-auto mt-16 rounded drop-shadow-xl pb-64">
       <Accordion alwaysOpen={true}>
         <Accordion.Panel>
           <Accordion.Title>what is Cors?</Accordion.Title>

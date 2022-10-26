@@ -41,7 +41,7 @@ const Register = () => {
 
   }
   return (
-    <div className="mt-8 w-96 mx-auto">
+    <div className="mt-8 w-96 mx-auto pb-16">
       <Card>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>

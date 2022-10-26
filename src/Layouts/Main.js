@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "../Components/Footer/Footer";
+import Footers from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
 
 const Main = () => {
@@ -8,9 +8,10 @@ const Main = () => {
     <div>
       <Header></Header>
       <Outlet></Outlet>
-      <Footer></Footer>
+      <Footers></Footers>
     </div>
   );
 };
 
 export default Main;
+

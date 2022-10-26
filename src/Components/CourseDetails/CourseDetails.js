@@ -24,7 +24,7 @@ const CourseDetails = () => {
                 {({ toPdf }) => (
                   <button onClick={toPdf}>
                     {" "}
-                    <FaDownload className="text-3xl ml-96 text-indigo-600"></FaDownload>
+                    <FaDownload className="text-3xl lg:ml-96 text-indigo-600"></FaDownload>
                   </button>
                 )}
               </Pdf>
@@ -33,7 +33,7 @@ const CourseDetails = () => {
         </div>
         <img src={image_url} alt="" className="h-96" />
         <div className="mt-2.5 mb-5 flex items-center">
-          <span>Ratings:</span>
+          <span className="dark:text-gray-400">Ratings:</span>
           <FaStar className=" text-yellow-300"></FaStar>
           <FaStar className=" text-yellow-300"></FaStar>
           <FaStar className=" text-yellow-300"></FaStar>
@@ -51,7 +51,7 @@ const CourseDetails = () => {
               {Course_title}
             </span>
           </Alert>
-          <div ref={ref}>{get_started}</div>
+          <div ref={ref} className="dark:text-gray-400 text-xl mt-8">{get_started}</div>
         </div>
 
         <div className="flex items-center justify-between">

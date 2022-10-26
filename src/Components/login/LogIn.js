@@ -1,12 +1,13 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { Button, Card, Label, TextInput } from 'flowbite-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthProvider } from '../../Context/AuthContext';
 
 const LogIn = () => {
 const {loginWithGoogle,user,logInWithGithub,signinWithEmail} = useContext(AuthProvider);
+const [error,setError] = useState('');
 const navigate= useNavigate();
   const location = useLocation();
   const from = location?.state?.from.pathname || '/';
@@ -51,7 +52,10 @@ const logInWithEmail = (event) =>{
         form.reset();
         navigate(from,{replace:true});
     })
-    .catch(e =>console.error(e))
+    .catch(e =>{
+      setError(e.message)
+      console.error(e)
+    })
 }
 
     return (
@@ -98,6 +102,9 @@ const logInWithEmail = (event) =>{
         Login With GitHub
       </Button>
       <p>Do Not Have a Account?please <Link className="text-indigo-600" to='/register'>Register</Link></p>
+  {
+    error && <p className='text-red-800 text-xl '>{error}</p>
+  }
   </Card>
 </div>
     );

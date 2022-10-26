@@ -5,7 +5,6 @@ import SideBar from '../Course/SideBar';
 
 const Courses = () => {
     const courses= useLoaderData();
-    console.log(courses);
     
     return (
         <div className='grid grid-cols-4'>

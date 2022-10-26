@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import SideBar from "../Components/Course/SideBar";
+import CheckOut from "../Components/CheckOut/CheckOut";
+import CourseDetails from "../Components/CourseDetails/CourseDetails";
 import Courses from "../Components/Courses/Courses";
 import ErrorPage from "../Components/ErrorElement/ErrorPage";
 import Home from "../Components/Home/Home";
@@ -28,13 +29,20 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/courses',
-                element:<PrivateRoutes><Courses></Courses></PrivateRoutes>,
+                element:<Courses></Courses>,
                 loader:()=>fetch('https://tech-mentors-server.vercel.app/courses/')
             },
             {
-                path:'/categories',
-                element:<SideBar></SideBar>,
-                loader:()=>fetch('https://tech-mentors-server.vercel.app/categories')
+                path:'/categories/:id',
+                loader:({params})=> fetch(`https://tech-mentors-server.vercel.app/categories/${params.id}`),
+                element:<CourseDetails></CourseDetails>,
+                
+            },
+            {
+                path:'/checkout/:id',
+                loader:({params})=> fetch(`https://tech-mentors-server.vercel.app/checkout/${params.id}`),
+                element:<PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>
+                
             },
         ]
     },

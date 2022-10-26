@@ -1,4 +1,4 @@
-import { Avatar, Button, Navbar, Tooltip } from "flowbite-react";
+import { Avatar, Button, DarkThemeToggle, Flowbite, Navbar, Tooltip } from "flowbite-react";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthProvider } from "../../Context/AuthContext";
@@ -14,7 +14,7 @@ const Header = () => {
     })
   }
   return (
-    <Navbar className="w-3/4 mx-auto"  fluid={true} rounded={true}>
+    <Navbar  className="dark:bg-black dark:text-white"  fluid={true} rounded={true}>
       <Navbar.Brand to="https://flowbite.com/">
         <img
           src="https://cdn-icons-png.flaticon.com/512/924/924915.png"
@@ -33,7 +33,9 @@ const Header = () => {
         <Link to="/courses">Courses</Link>
         <Link to="/faq">FAQ</Link>
         <Link to="/blog">Blog</Link>
-        <Link to="/theme">Light Mode</Link>
+              <Flowbite>
+        <DarkThemeToggle />
+              </Flowbite>
         <Link>
           {user?.uid ? (
             <div className="flex justify-between align-middle">

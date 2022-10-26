@@ -1,10 +1,11 @@
 import { Button, Card, Checkbox, Label, TextInput } from "flowbite-react";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthProvider } from "../../Context/AuthContext";
 
 const Register = () => {
   const { createUser ,updateUserProfile} = useContext(AuthProvider);
+  const navigate = useNavigate();
 
   //register with email and password
   const handleSubmit = (event) => {
@@ -21,6 +22,7 @@ const Register = () => {
         console.log(user);
         form.reset();
         handleUpdateUserProfile(name,photoURL);
+        navigate('/home')
     })
     .catch(e =>console.error(e))
   };

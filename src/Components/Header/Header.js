@@ -29,6 +29,7 @@ const Header = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse className="ml-64">
+        <Link to="/home">Home</Link>
         <Link to="/courses">Courses</Link>
         <Link to="/faq">FAQ</Link>
         <Link to="/blog">Blog</Link>

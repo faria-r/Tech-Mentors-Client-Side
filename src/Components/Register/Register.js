@@ -1,10 +1,10 @@
-import { Button, Card, Checkbox, Label, TextInput } from "flowbite-react";
+import { Button, Card,  Label, TextInput } from "flowbite-react";
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthProvider } from "../../Context/AuthContext";
 
 const Register = () => {
-  const { createUser, updateUserProfile } = useContext(AuthProvider);
+  const { createUser, updateUserProfile} = useContext(AuthProvider);
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -24,8 +24,9 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        navigate(from, { replace: true });
         handleUpdateUserProfile(name, photoURL);
+        navigate(from,{replace: true});
+       
       })
       .catch((e) => console.error(e));
   };
@@ -36,9 +37,7 @@ const Register = () => {
       photoURL: photoURL,
     };
     updateUserProfile(profile)
-      .then(() => {
-        console.log("profile updated");
-      })
+      .then(() => {})
       .catch((e) => console.error(e));
   };
   return (

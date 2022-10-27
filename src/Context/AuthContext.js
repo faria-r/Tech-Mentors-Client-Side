@@ -53,7 +53,6 @@ return signInWithEmailAndPassword(auth,email,password);
   }
   //update user info
   const updateUserProfile = (profile) => {
-    setLoading(true);
     return updateProfile(auth.currentUser,profile);
     }
 

@@ -18,11 +18,11 @@ Here You can Visit Our live Website:      [Tech Mentors](https://tech-mentors-22
 - Tech mentors also Provide Blogs on Trending Technology.
 - For Better UI experience Tech mentors included theme(dark/light) Toggler.
 ## Technology Used in Tech Mentors:
-- React jS
-- Tailwind CSS
-- Javascript
-- JSX
-- Node JS
-- React Icons
-- Firebase
+1. React jS
+2. Tailwind CSS
+3. Javascript
+4. JSX
+5. Node JS
+6. React Icons
+7. Firebase
 

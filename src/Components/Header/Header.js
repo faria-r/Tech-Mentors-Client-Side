@@ -1,25 +1,36 @@
-import { Avatar, Button, DarkThemeToggle, Flowbite, Navbar, Tooltip } from "flowbite-react";
+import {
+  Avatar,
+  Button,
+  DarkThemeToggle,
+  Flowbite,
+  Navbar,
+  Tooltip,
+} from "flowbite-react";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthProvider } from "../../Context/AuthContext";
 
 const Header = () => {
-  const { user,logOut } = useContext(AuthProvider);
+  const { user, logOut } = useContext(AuthProvider);
 
-  const handleLogOut = ()=>{
+  const handleLogOut = () => {
     logOut()
-    .then(()=>{})
-    .catch(error =>{
-      console.error(error)
-    })
-  }
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
-    <Navbar  className="dark:bg-black dark:text-white"  fluid={true} rounded={true}>
-      <Navbar.Brand to="https://flowbite.com/">
+    <Navbar
+      className="dark:bg-black dark:text-white"
+      fluid={true}
+      rounded={true}
+    >
+      <Navbar.Brand to="#">
         <img
           src="https://cdn-icons-png.flaticon.com/512/924/924915.png"
           className="mr-3 h-6 sm:h-9"
-          alt="Flowbite Logo"
+          alt="tech Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
           Tech Mentors
@@ -33,9 +44,9 @@ const Header = () => {
         <Link to="/courses">Courses</Link>
         <Link to="/faq">FAQ</Link>
         <Link to="/blog">Blog</Link>
-              <Flowbite>
-        <DarkThemeToggle />
-              </Flowbite>
+        <Flowbite>
+          <DarkThemeToggle />
+        </Flowbite>
         <Link>
           {user?.uid ? (
             <div className="flex justify-between align-middle">
@@ -43,7 +54,9 @@ const Header = () => {
                 <Avatar img={user?.photoURL} status="online" />
               </Tooltip>
 
-              <Button onClick={handleLogOut} className="ml-8">LogOut</Button>
+              <Button onClick={handleLogOut} className="ml-8">
+                LogOut
+              </Button>
             </div>
           ) : (
             <>

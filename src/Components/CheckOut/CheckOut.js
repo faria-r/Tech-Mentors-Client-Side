@@ -3,15 +3,16 @@ import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthProvider } from "../../Context/AuthContext";
 
+//premium content for premium user page--protected routes
 const CheckOut = () => {
   const courseCheckOut = useLoaderData();
   const { Course_title } = courseCheckOut;
   const { user } = useContext(AuthProvider);
   return (
-    <div className="max-w-sm lg:mx-auto mt-8 pb-44">
-         <div className="flex justify-between px-4 pt-4  mb-8 text-xl text-indigo-600 font-semibold">
-            <h2>Your Enrolled Course is:{Course_title}</h2>
-        </div>
+    <div className="max-w-sm mx-auto mt-8 pb-44">
+      <div className="flex justify-between px-4 pt-4  mb-8 text-xl text-indigo-600 font-semibold">
+        <h2>Your Enrolled Course is:{Course_title}</h2>
+      </div>
       <Card>
         <div className="flex flex-col items-center pb-10">
           <img

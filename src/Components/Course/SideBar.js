@@ -13,6 +13,7 @@ const SideBar = () => {
       .then((data) => setCategories(data));
   }, []);
   return (
+    //sidebar for course category
     <div className="mt-8 ml-8 sticky top-3">
       {categories.map((category) => (
         <div className="w-fit" key={category.id}>
@@ -20,8 +21,8 @@ const SideBar = () => {
             <Sidebar.Items>
               <Sidebar.ItemGroup >
               <Link to={`/categories/${category.id}`}>
-                <Sidebar.Item className="bg-slate-500 d-flex  text-red-800 font-bold text-2xl">
-               {category.name} <FaArrowCircleRight></FaArrowCircleRight>
+                <Sidebar.Item className="bg-slate-500 flex  justify-between text-red-800 font-bold text-2xl">
+               <span>{category.name} </span><FaArrowCircleRight className="ml-48 -mt-4"></FaArrowCircleRight>
                 </Sidebar.Item>
                 </Link>
               </Sidebar.ItemGroup>

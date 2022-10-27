@@ -4,11 +4,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthProvider } from "../../Context/AuthContext";
 
 const Register = () => {
-  const { createUser ,updateUserProfile} = useContext(AuthProvider);
+  const { createUser, updateUserProfile } = useContext(AuthProvider);
   const navigate = useNavigate();
 
-   const location = useLocation();
-  const from = location?.state?.from.pathname || '/';
+  const location = useLocation();
+  const from = location?.state?.from.pathname || "/";
 
   //register with email and password
   const handleSubmit = (event) => {
@@ -19,27 +19,28 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    createUser(email,password)
-    .then(result => {
+    createUser(email, password)
+      .then((result) => {
         const user = result.user;
         console.log(user);
         form.reset();
-        navigate(from,{replace:true});
-        handleUpdateUserProfile(name,photoURL);
-    })
-    .catch(e =>console.error(e))
+        navigate(from, { replace: true });
+        handleUpdateUserProfile(name, photoURL);
+      })
+      .catch((e) => console.error(e));
   };
   //update user profile name and photo url
-  const handleUpdateUserProfile = (name,photoURL)=>{
+  const handleUpdateUserProfile = (name, photoURL) => {
     const profile = {
-        displayName:name,
-        photoURL:photoURL
-    }
+      displayName: name,
+      photoURL: photoURL,
+    };
     updateUserProfile(profile)
-    .then(()=>{console.log('profile updated');})
-    .catch(e =>console.error(e))
-
-  }
+      .then(() => {
+        console.log("profile updated");
+      })
+      .catch((e) => console.error(e));
+  };
   return (
     <div className="mt-8 w-96 mx-auto pb-16">
       <Card>
@@ -60,7 +61,13 @@ const Register = () => {
             <div className="mb-2 block">
               <Label htmlFor="photoURL" value="Your photo URL" />
             </div>
-            <TextInput id="photo" name="photo"type="text" placeholder="Your Photo URL" required/>
+            <TextInput
+              id="photo"
+              name="photo"
+              type="text"
+              placeholder="Your Photo URL"
+              required
+            />
           </div>
           <div>
             <div className="mb-2 block">

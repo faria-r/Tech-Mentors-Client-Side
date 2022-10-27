@@ -3,9 +3,9 @@ import React from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { FaDownload, FaStar } from "react-icons/fa";
 import Pdf from "react-to-pdf";
-
+//pdf generator
 const ref = React.createRef();
-
+//course details
 const CourseDetails = () => {
   const courseinfo = useLoaderData();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const CourseDetails = () => {
     navigate(`/checkout/${_id}`);
   };
   return (
-    <div className="container mx-auto mt-4">
+    <div className="container mx-auto mt-4 mb-16">
       <Card>
         <div>
           <Alert color="info" withBorderAccent={true}>
@@ -51,7 +51,9 @@ const CourseDetails = () => {
               {Course_title}
             </span>
           </Alert>
-          <div ref={ref} className="dark:text-gray-400 text-xl mt-8">{get_started}</div>
+          <div ref={ref} className="dark:text-gray-400 text-xl mt-8">
+            {get_started}
+          </div>
         </div>
 
         <div className="flex items-center justify-between">

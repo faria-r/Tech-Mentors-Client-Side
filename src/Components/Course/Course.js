@@ -3,11 +3,12 @@ import React from 'react';
 
 const Course = ({course}) => {
     const {Course_title,image_url,details}= course;
+    //single course page
     return (
         <div className='lg:w-96 mb-8 mt-8 lg:ml-24' >
-        <Card className='lg:mr-8 sm:ml-8'
+        <Card className='lg:mr-8 sm:mx-auto'
         >
-            <img src={image_url} className='w-96 h-64' alt='course-name'/>
+            <img src={image_url} className='w-80 h-64' alt='course-name'/>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {Course_title}
           </h5>

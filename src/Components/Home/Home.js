@@ -12,7 +12,6 @@ const Home = () => {
           <img src="https://i.ibb.co/TM0D4CK/React.jpg" alt="..." />
 
           <img src="https://i.ibb.co/zf1nRqv/bootstrap.jpg" alt="..." />
-          <img className="" src="https://i.ibb.co/Ycqm3pQ/OIP.jpg" alt="..." />
           <img
             className="lg:w-3/4"
             src="https://i.ibb.co/4d39pyC/mongoDB.jpg"

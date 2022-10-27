@@ -12,6 +12,7 @@ import { AuthProvider } from "../../Context/AuthContext";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthProvider);
+  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -48,7 +49,7 @@ const Header = () => {
           <DarkThemeToggle />
         </Flowbite>
         <Link>
-          {user?.uid ? (
+          {user ? (
             <div className="flex justify-between align-middle">
               <Tooltip content={user?.displayName} trigger="hover">
                 <Avatar img={user?.photoURL} status="online" />

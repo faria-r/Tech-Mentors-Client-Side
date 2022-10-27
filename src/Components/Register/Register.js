@@ -1,10 +1,12 @@
 import { Button, Card,  Label, TextInput } from "flowbite-react";
 import React, { useContext } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthProvider } from "../../Context/AuthContext";
 
 const Register = () => {
   const { createUser, updateUserProfile} = useContext(AuthProvider);
+  const [error,setError] = useState('');
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -21,14 +23,17 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        const user = result.user;
+        const user = result?.user;
         console.log(user);
-        form.reset();
+       
         handleUpdateUserProfile(name, photoURL);
         navigate(from,{replace: true});
-       
+        form.reset();
       })
-      .catch((e) => console.error(e));
+      .catch((e) => {
+        console.error(e);
+        setError(e.message);
+      });
   };
   //update user profile name and photo url
   const handleUpdateUserProfile = (name, photoURL) => {
@@ -99,6 +104,7 @@ const Register = () => {
             Login
           </Link>
         </p>
+        {error && <p className="text-red-800 text-xl ">{error}</p>}
       </Card>
     </div>
   );

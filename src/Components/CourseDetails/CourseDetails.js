@@ -31,7 +31,7 @@ const CourseDetails = () => {
             </span>
           </Alert>
         </div>
-        <img src={image_url} alt="" className="h-96" />
+        <img src={image_url} alt="" className="h-96 lg:w-1/2 mx-auto p-4" />
         <div className="mt-2.5 mb-5 flex items-center">
           <span className="dark:text-gray-400">Ratings:</span>
           <FaStar className=" text-yellow-300"></FaStar>

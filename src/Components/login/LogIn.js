@@ -62,8 +62,8 @@ const LogIn = () => {
 
   return (
     <div className="mt-16 w-96 mx-auto pb-16">
-      <Card>
-        <form onSubmit={logInWithEmail} className="flex flex-col gap-4">
+      <Card className="shadow-xl shadow-blue-400">
+        <form onSubmit={logInWithEmail} className="flex flex-col gap-4  p-4">
           <div>
             <div className="mb-2 block">
               <Label htmlFor="email1" value="Your email" />
@@ -87,12 +87,12 @@ const LogIn = () => {
               required={true}
             />
           </div>
-          <Button type="submit">LogIn</Button>
+          <Button className="bg-blue-600" type="submit">LogIn</Button>
         </form>
-        <Button onClick={handlelogInWithGoogle} type="submit">
+        <Button className="bg-blue-800" onClick={handlelogInWithGoogle} type="submit">
           Login With Google
         </Button>
-        <Button onClick={handleLogInWithGithub} type="submit">
+        <Button className="bg-blue-900" onClick={handleLogInWithGithub} type="submit">
           Login With GitHub
         </Button>
         <p>

@@ -1,4 +1,3 @@
-import { Card } from 'flowbite-react';
 import React from 'react';
 import instructor from '../../Assets/images/xcasual-man-happy-smile-young-handsome-guy-hold-tab-B3EGD4W.jpg.pagespeed.ic.U9-Jybi_6X.webp'
 const Instructors = () => {

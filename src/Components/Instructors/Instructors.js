@@ -3,20 +3,22 @@ import React from 'react';
 import instructor from '../../Assets/images/xcasual-man-happy-smile-young-handsome-guy-hold-tab-B3EGD4W.jpg.pagespeed.ic.U9-Jybi_6X.webp'
 const Instructors = () => {
     return (
-        <div>
-            <h2 className='text-5xl text-blue-500 font-semibold'>Meet Our Instructors</h2>
+        <div className='my-4 w-3/4 mx-auto shadow-xl shadow-blue-400 p-4'>
+            <h2 className='text-5xl text-blue-500 my-8 font-semibold'>Meet Our Instructor</h2>
             <div className="">
-  <Card
-    horizontal={true}
-    imgSrc={instructor}
-  >
-    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-      Noteworthy technology acquisitions 2021
+  <div className=' lg:flex sm:flex-column'>
+    <div>
+        <img src={instructor} alt="" className='h-96' />
+    </div>
+   <div className='lg:ml-8'>
+   <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+     Daniel Alexander Mike
     </h5>
     <p className="font-normal text-gray-700 dark:text-gray-400">
-      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+      Meet Mr.Mike! The best one from our Instructor Team.
     </p>
-  </Card>
+   </div>
+  </div>
 </div>
         </div>
     );

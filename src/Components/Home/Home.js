@@ -24,7 +24,7 @@ const Home = () => {
       </div>
       
     </div>
-    <div className="w-3/4 mx-auto">
+    <div>
       <Instructors></Instructors>
       </div>
    </div>

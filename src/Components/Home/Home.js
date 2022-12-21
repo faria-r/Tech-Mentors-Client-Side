@@ -1,10 +1,12 @@
 import { Carousel } from "flowbite-react";
 import React from "react";
+import Instructors from "../Instructors/Instructors";
 import RightSideBar from "../RightSIdeBar/RightSideBar";
 
 const Home = () => {
   return (
-    <div className="pb-32 lg:flex lg:flex-row  sm:flex-col-reverse">
+   <div>
+     <div className="pb-32 lg:flex lg:flex-row  sm:flex-col-reverse">
       <RightSideBar></RightSideBar>
       <div className=" h-56 sm:h-64 xl:h-96 2xl:h-96  mt-16 w-3/4 mx-auto">
         <Carousel slideInterval={3000}>
@@ -18,8 +20,14 @@ const Home = () => {
             alt="..."
           />
         </Carousel>
+     
       </div>
+      
     </div>
+    <div className="w-3/4 mx-auto">
+      <Instructors></Instructors>
+      </div>
+   </div>
   );
 };
 
